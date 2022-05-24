@@ -1,0 +1,15 @@
+spring:
+  application:    
+  cloud:    
+    gateway:
+      routes:
+        - id: to-theater-getAll
+          uri: lb://theater-service
+          predicates:
+            - Path=/theater
+            - Method=GET
+          filters:
+#            - RewritePath=/reservation, /reservation        
+      discovery:
+        locator:
+          enabled: true
