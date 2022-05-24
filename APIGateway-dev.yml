@@ -1,3 +1,4 @@
+
 spring:
   application:    
   cloud:    
@@ -9,7 +10,14 @@ spring:
             - Path=/theater
             - Method=GET
           filters:
-#            - RewritePath=/reservation, /reservation        
+#            - RewritePath=/reservation, /reservation   
+        - id: to-theater-add
+          uri: lb://theater-service
+          predicates:
+            - Path=/theater
+            - Method=POST
+          filters:
+#            - RewritePath=/reservation, /reservation       
       discovery:
         locator:
           enabled: true
