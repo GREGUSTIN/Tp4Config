@@ -19,6 +19,9 @@ spring:
             - Origin
             - Accept
             - Authorization
+            exposedHeaders:
+            - Authorization
+            
       routes:
         - id: to-theater-getAll
           uri: lb://theater-service
