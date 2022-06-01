@@ -3,24 +3,24 @@ spring:
   application:    
   cloud:    
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedMethods:
-            - GET
-            - POST
-            - DELETE
-            - PATCH
-            - PUT        
-            allowedHeaders:
-            - Content-Type  
-            - X-Requested-With 
-            - Origin
-            - Accept
-            - Authorization
-            exposedHeaders:
-            - Authorization          
+      # globalcors:
+      #   cors-configurations:
+      #     '[/**]':
+      #       allowedOrigins: "http://localhost:4200"
+      #       allowedMethods:
+      #       - GET
+      #       - POST
+      #       - DELETE
+      #       - PATCH
+      #       - PUT        
+      #       allowedHeaders:
+      #       - Content-Type  
+      #       - X-Requested-With 
+      #       - Origin
+      #       - Accept
+      #       - Authorization
+      #       exposedHeaders:
+      #       - Authorization          
            
 
       routes:
