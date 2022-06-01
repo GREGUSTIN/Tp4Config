@@ -14,7 +14,11 @@ spring:
             - PATCH
             - PUT        
             allowedHeaders:
-            - Content-Type    
+            - Content-Type  
+            - X-Requested-With 
+            - Origin
+            - Accept
+            - Authorization
       routes:
         - id: to-theater-getAll
           uri: lb://theater-service
