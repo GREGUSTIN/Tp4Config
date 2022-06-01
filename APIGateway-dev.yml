@@ -21,8 +21,8 @@ spring:
             - Authorization
             exposedHeaders:
             - Authorization
-            allowCredentials:
-            - True
+            allowCredentials: true
+           
 
       routes:
         - id: to-theater-getAll
