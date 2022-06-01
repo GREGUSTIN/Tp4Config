@@ -6,15 +6,13 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: http://localhost:4200
+            allowedOrigins: "http://localhost:4200"
             allowedMethods:
               - GET
               - POST
               - DELETE
               - PATCH
-              - PUT
-            
-
+              - PUT            
       routes:
         - id: to-theater-getAll
           uri: lb://theater-service
