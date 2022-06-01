@@ -36,6 +36,12 @@ spring:
           predicates:
             - Path=/theater
             - Method=POST
+
+        - id: to-theater-getOne
+          uri: lb://theater-service
+          predicates:
+            - Path=/theater/one
+            - Method=GET
           filters:
 #            - RewritePath=/reservation, /reservation       
       discovery:
