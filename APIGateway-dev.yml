@@ -21,7 +21,9 @@ spring:
             - Authorization
             exposedHeaders:
             - Authorization
-            
+            allowCredentials:
+            - True
+
       routes:
         - id: to-theater-getAll
           uri: lb://theater-service
