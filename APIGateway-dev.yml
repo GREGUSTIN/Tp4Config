@@ -1,4 +1,3 @@
-
 spring:
   application:    
   cloud:    
@@ -21,7 +20,7 @@ spring:
             - Accept
             - Authorization
             exposedHeaders:
-            - Authorization         
+            - Authorization        
            
 
       routes:
@@ -45,12 +44,13 @@ spring:
             - Method=GET
           filters:
 #            - RewritePath=/reservation, /reservation    
-         - id: to-movieRomm-add
+        - id: to-movieRomm-add
           uri: lb://theater-service
           predicates:
             - Path=/movieRoom
             - Method=POST
-          filters:    
+          filters:
+#            - RewritePath=/reservation, /reservation     
       discovery:
         locator:
           enabled: true
