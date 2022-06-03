@@ -21,7 +21,7 @@ spring:
             - Accept
             - Authorization
             exposedHeaders:
-            - Authorization          
+            - Authorization         
            
 
       routes:
@@ -44,7 +44,13 @@ spring:
             - Path=/theater/one
             - Method=GET
           filters:
-#            - RewritePath=/reservation, /reservation       
+#            - RewritePath=/reservation, /reservation    
+         - id: to-movieRomm-add
+          uri: lb://theater-service
+          predicates:
+            - Path=/movieRoom
+            - Method=POST
+          filters:    
       discovery:
         locator:
           enabled: true
