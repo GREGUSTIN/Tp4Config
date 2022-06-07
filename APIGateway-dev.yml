@@ -49,8 +49,11 @@ spring:
           predicates:
             - Path=/movieRoom
             - Method=POST
-          filters:
-#            - RewritePath=/reservation, /reservation     
+        - id: to-movieRomm-getOne
+          uri: lb://theater-service
+          predicates:
+            - Path=/movieRoom/one
+            - Method=GET      
       discovery:
         locator:
           enabled: true
