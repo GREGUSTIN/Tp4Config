@@ -53,7 +53,23 @@ spring:
           uri: lb://theater-service
           predicates:
             - Path=/movieRoom/one
-            - Method=GET      
+            - Method=GET  
+        - id: to-movie-add
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie
+            - Method=POST
+        - id: to-movie-getOne
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie/one
+            - Method=GET 
+        - id: to-movie-getAll
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie
+            - Method=GET       
+          
       discovery:
         locator:
           enabled: true
