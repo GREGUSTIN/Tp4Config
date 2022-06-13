@@ -78,7 +78,12 @@ spring:
           uri: lb://movie-service
           predicates:
             - Path=/category
-            - Method=GET   
+            - Method=GET  
+        - id: to-category-getAllToday
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie/today
+            - Method=GET    
       discovery:
         locator:
           enabled: true
